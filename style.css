@@ -1,5 +1,66 @@
+body {
+    background: linear-gradient(180deg, #ff71ce, #01cdfe, #05ffa1, #fffb96);
+    background-size: 800% 800%;
+
+    -webkit-animation: rainbow 60s ease infinite;
+    -moz-animation: rainbow 60s ease infinite;
+    animation: rainbow 60s ease infinite;
+}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:84% 0%}
+    50%{background-position:17% 100%}
+    100%{background-position:84% 0%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:84% 0%}
+    50%{background-position:17% 100%}
+    100%{background-position:84% 0%}
+}
+@keyframes rainbow {
+    0%{background-position:84% 0%}
+    50%{background-position:17% 100%}
+    100%{background-position:84% 0%}
+}
+
+body {
+  background-color: #01cdfe;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: noise .2s infinite;
+  opacity: .9;
+  visibility: visible;
+}
+
+@keyframes noise {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
+
+
 h1 {
-	color: #66a1d2;
-	background-color: #b252a1;
+	color: #01cdfe;
+	background-color: #b967ff;
 	display: inline;
 }
