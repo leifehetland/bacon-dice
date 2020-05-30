@@ -1,10 +1,5 @@
 # bacon-dice
 
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -37,10 +32,5 @@
 
 Images coming soon!
 
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 Project Link: [https://github.com/leifehetland/bacon-dice](https://github.com/leifehetland/bacon-dice)
