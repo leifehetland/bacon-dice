@@ -1,66 +1,279 @@
-body {
-    background: linear-gradient(180deg, #ff71ce, #01cdfe, #05ffa1, #fffb96);
-    background-size: 800% 800%;
+/**********************************************
+*** BACKGROUND
+**********************************************/
 
-    -webkit-animation: rainbow 60s ease infinite;
-    -moz-animation: rainbow 60s ease infinite;
-    animation: rainbow 60s ease infinite;
+* {
+	box-sizing: border-box;
+}
+
+.clearfix::after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+body {
+	background: linear-gradient(180deg, #ff71ce, #01cdfe, #05ffa1, #fffb96);
+	background-size: 800% 800%;
+	font-family: 'VT323', monospace;
+
+	-webkit-animation: rainbow 60s ease infinite;
+	-moz-animation: rainbow 60s ease infinite;
+	animation: rainbow 60s ease infinite;
 }
 
 @-webkit-keyframes rainbow {
-    0%{background-position:84% 0%}
-    50%{background-position:17% 100%}
-    100%{background-position:84% 0%}
-}
-@-moz-keyframes rainbow {
-    0%{background-position:84% 0%}
-    50%{background-position:17% 100%}
-    100%{background-position:84% 0%}
-}
-@keyframes rainbow {
-    0%{background-position:84% 0%}
-    50%{background-position:17% 100%}
-    100%{background-position:84% 0%}
+	0% {
+		background-position: 84% 0%
+	}
+
+	50% {
+		background-position: 17% 100%
+	}
+
+	100% {
+		background-position: 84% 0%
+	}
 }
 
-body {
-  background-color: #01cdfe;
-  margin: 0;
-  overflow-x: hidden;
+@-moz-keyframes rainbow {
+	0% {
+		background-position: 84% 0%
+	}
+
+	50% {
+		background-position: 17% 100%
+	}
+
+	100% {
+		background-position: 84% 0%
+	}
+}
+
+@keyframes rainbow {
+	0% {
+		background-position: 84% 0%
+	}
+
+	50% {
+		background-position: 17% 100%
+	}
+
+	100% {
+		background-position: 84% 0%
+	}
 }
 
 .bg {
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200vh;
-  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
-  background-repeat: repeat;
-  animation: noise .2s infinite;
-  opacity: .9;
-  visibility: visible;
+	animation: noise .2s infinite;
+	background-repeat: repeat;
+	background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+	bottom: -50%;
+	height: 200vh;
+	left: -50%;
+	opacity: .9;
+	position: fixed;
+	right: -50%;
+	top: -50%;
+	visibility: visible;
+	width: 200%;
 }
 
 @keyframes noise {
-    0% { transform: translate(0,0) }
-    10% { transform: translate(-5%,-5%) }
-    20% { transform: translate(-10%,5%) }
-    30% { transform: translate(5%,-10%) }
-    40% { transform: translate(-5%,15%) }
-    50% { transform: translate(-10%,5%) }
-    60% { transform: translate(15%,0) }
-    70% { transform: translate(0,10%) }
-    80% { transform: translate(-15%,0) }
-    90% { transform: translate(10%,5%) }
-    100% { transform: translate(5%,0) }
+	0% {
+		transform: translate(0, 0)
+	}
+
+	10% {
+		transform: translate(-5%, -5%)
+	}
+
+	20% {
+		transform: translate(-10%, 5%)
+	}
+
+	30% {
+		transform: translate(5%, -10%)
+	}
+
+	40% {
+		transform: translate(-5%, 15%)
+	}
+
+	50% {
+		transform: translate(-10%, 5%)
+	}
+
+	60% {
+		transform: translate(15%, 0)
+	}
+
+	70% {
+		transform: translate(0, 10%)
+	}
+
+	80% {
+		transform: translate(-15%, 0)
+	}
+
+	90% {
+		transform: translate(10%, 5%)
+	}
+
+	100% {
+		transform: translate(5%, 0)
+	}
 }
 
+/**********************************************
+*** GAME BOARD
+**********************************************/
 
-h1 {
+.wrapper {
+	background-color: rgba(0, 0, 0, 0.10);
+	box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.3);
+	left: 50%;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 1000px;
+}
+
+.player-0-panel,
+.player-1-panel {
+	float: left;
+	height: 600px;
+	padding: 100px;
+	width: 50%;
+	
+}
+
+/**********************************************
+*** PLAYERS
+**********************************************/
+
+.player-name {
+	font-size: 40px;
+	font-weight: 100;
+	letter-spacing: 2px;
+	margin-bottom: 10px;
+	margin-top: 20px;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.player-score {
+	color: 	#fff;
+	font-size: 80px;
+	font-weight: 100;
+	margin-bottom: 130px;
+	text-align: center;
+	text-shadow: -1px 0 #01cdfe, 0 1px #01cdfe, 1px 0 #01cdfe, 0 -1px #01cdfe;
+}
+
+.active {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.active .player-name {
+	font-weight: 300;
+}
+
+.active .player-name::after {
 	color: #01cdfe;
-	background-color: #b967ff;
-	display: inline;
+	content: "\0394";
+	font-size: 47px;
+	opacity: .5;
+	position: absolute;
+	right: 10px;
+	text-shadow: -2px 0 #fffb96, 0 2px #fffb96, 2px 0 #fffb96, 0 -2px #fffb96;
+	top: -7px;
+}
+
+.player-current-box {
+	background-color: rgba(5,255, 161, 0.3);
+	border: 1px solid #555;
+	box-shadow: 1px 1px 100px rgba(0, 0, 0, 1.0);
+	color: #fff;
+	margin: 0 auto;
+	padding: 12px;
+	text-align: center;
+	width: 40%;
+}
+
+.player-current-label {
+	color: #fff;
+	font-size: 2rem;
+	margin-bottom: 10px;
+	text-shadow: -1px 0 #01cdfe, 0 1px #01cdfe, 1px 0 #01cdfe, 0 -1px #01cdfe;
+	text-transform: uppercase;
+}
+
+.player-current-score {
+	font-size: 30px;
+}
+
+button {
+	background: none;
+	border: none;
+	color: #fff;
+	cursor: crosshair;
+	font-family: 'VT323', monospace;
+	font-size: 2.5rem;
+	font-weight: 300;
+	left: 50%;
+	opacity: .6;
+	position: absolute;
+	text-transform: uppercase;
+	transform: translateX(-50%);
+	transition: background-color 0.3s, color 0.3s;
+	width: 200px;
+}
+
+button:hover {
+	font-weight: 600;
+}
+
+button:hover {
+	margin-right: 20px;
+	opacity: 1;
+	text-shadow: -1px 0 #01cdfe, 0 1px #01cdfe, 1px 0 #01cdfe, 0 -1px #01cdfe;
+}
+
+button:focus {
+	outline: none;
+}
+
+.btn-new {
+	top: 45px;
+}
+
+.btn-roll {
+	top: 403px;
+}
+
+.btn-hold {
+	top: 467px;
+}
+
+.dice {
+	border: 1px solid #555;
+	box-shadow: 1px 1px 100px rgba(0, 0, 0, 1.0);
+	height: 100px;
+	left: 50%;
+	opacity: .8;
+	position: absolute;
+	top: 178px;
+	transform: translateX(-50%);
+}
+
+.winner {
+	background-color: #f7f7f7;
+}
+
+.winner .player-name {
+	color: #01cdfe;
+	font-weight: 300;
 }
