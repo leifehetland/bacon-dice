@@ -4,7 +4,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/leifehetland/bacon-dice">
-    <img src="https://lh3.googleusercontent.com/proxy/0s5rIEV6oUQrbiZ-kcbg9JTE-m-oZkIR0wXlpLQCsGoNRYdd65xY7jye3PY2DPEfqxXatYPGzncOmesJr8YdYV1AE0wmpoEq6Q" alt="Logo" width="80" height="80">
+    <img src="./img/lil_pig.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Vaporwave Porcine Dice</h3>
