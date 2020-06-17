@@ -41,9 +41,13 @@ $(".btn-hold").on("click", function () {
 
 	// Update the UI 
 	$("#score-" + activePlayer).text(scores[activePlayer]);
-	nextPlayer();
 
 	// Check if the current player won the game
+	if (scores[activePlayer] >= 100) {
+		$("#name-" + activePlayer).text("WINNER!");
+	} else {
+		nextPlayer();
+	}
 })
 
 function nextPlayer() {
