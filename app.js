@@ -29,7 +29,25 @@ $(".btn-roll").on("click", function () {
 	} else {
 		// Player 2's turn
 		// if active player is set to zero then activePlayer is 1 else active player is 0
-		activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+		nextPlayer();
+	}
+
+
+})
+
+$(".btn-hold").on("click", function () {
+	// Add current score to global score
+	scores[activePlayer] += roundScore;
+
+	// Update the UI 
+	$("#score-" + activePlayer).text(scores[activePlayer]);
+	nextPlayer();
+
+	// Check if the current player won the game
+})
+
+function nextPlayer() {
+	activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
 		roundScore = 0;
 
 		// Reset current active score
@@ -42,8 +60,4 @@ $(".btn-roll").on("click", function () {
 
 		// Hide dice for next player
 		$(".dice").css("display", "none");
-
-	}
-
-
-})
+}
