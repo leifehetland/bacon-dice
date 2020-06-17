@@ -1,25 +1,20 @@
 console.log("Hello World");
 
-var scores = [0,0];
-var roundScore = 0;
-var activePlayer = 0;
+var scores;
+var roundScore;;
+var activePlayer;
 
-
-$('#score-0').text('0');
-$('#score-1').text('0');
-$('#current-0').text('0');
-$('#current-1').text('0');
-$(".dice").css("display", "none");
+initGame();
 
 $(".btn-roll").on("click", function () {
 	console.log("clicked");
-	
+
 	// Random number from 1 to 6
-	dice = Math.floor(Math.random() * 6)  + 1;
+	dice = Math.floor(Math.random() * 6) + 1;
 
 	// Display the result
 	$(".dice").css("display", "block");
-	$(".dice").attr("src", "img/dice-"+ dice +".png");
+	$(".dice").attr("src", "img/dice-" + dice + ".png");
 
 	// Update the round score if the number rolled isn't 1
 	if (dice !== 1) {
@@ -52,18 +47,43 @@ $(".btn-hold").on("click", function () {
 	}
 })
 
+$(".btn-new").on("click", initGame)
+
 function nextPlayer() {
 	activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
-		roundScore = 0;
+	roundScore = 0;
 
-		// Reset current active score
-		$("#current-0").text("0");
-		$("#current-1").text("0");
+	// Reset current active score
+	$("#current-0").text("0");
+	$("#current-1").text("0");
 
-		// Toggle active class based on player
-		$(".player-0-panel").toggleClass('active');
-		$(".player-1-panel").toggleClass('active');
+	// Toggle active class based on player
+	$(".player-0-panel").toggleClass('active');
+	$(".player-1-panel").toggleClass('active');
 
-		// Hide dice for next player
-		$(".dice").css("display", "none");
+	// Hide dice for next player
+	$(".dice").css("display", "none");
+}
+
+function initGame() {
+	scores = [0, 0];
+	roundScore = 0;
+	activePlayer = 0;
+
+	$('#score-0').text('0');
+	$('#score-1').text('0');
+	$('#current-0').text('0');
+	$('#current-1').text('0');
+	$(".dice").css("display", "none");
+
+	$("#name-0").text("Player 1");
+	$("#name-1").text("Player 2");
+
+	$(".player-0-panel").removeClass("winner");
+	$(".player-1-panel").removeClass("winner");
+
+	$(".player-0-panel").removeClass("active");
+	$(".player-1-panel").removeClass("active");
+
+	$(".player-0-panel").addClass("active");
 }
