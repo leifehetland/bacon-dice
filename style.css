@@ -183,7 +183,7 @@ body {
 
 .active .player-name::after {
 	color: #01cdfe;
-	content: "\0394";
+	content: "\221E";
 	font-size: 47px;
 	opacity: .5;
 	position: absolute;
