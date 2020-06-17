@@ -45,6 +45,8 @@ $(".btn-hold").on("click", function () {
 	// Check if the current player won the game
 	if (scores[activePlayer] >= 100) {
 		$("#name-" + activePlayer).text("WINNER!");
+		$(".dice").css("display", "none");
+		$(".player-" + activePlayer + "-panel").addClass("winner").removeClass("active");
 	} else {
 		nextPlayer();
 	}
