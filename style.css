@@ -183,7 +183,7 @@ body {
 
 .active .player-name::after {
 	color: #01cdfe;
-	content: "\0394";
+	content: "\221E";
 	font-size: 47px;
 	opacity: .5;
 	position: absolute;
@@ -270,10 +270,10 @@ button:focus {
 }
 
 .winner {
-	background-color: #f7f7f7;
+	background: linear-gradient(180deg, #ff71ce, #01cdfe, #05ffa1, #fffb96);
 }
 
 .winner .player-name {
-	color: #01cdfe;
+	color: #fff;
 	font-weight: 300;
 }
