@@ -14,7 +14,7 @@ $(".btn-roll").on("click", function () {
 
 	// Display the result
 	$(".dice").css("display", "block");
-	$(".dice").attr("src", "img/dice-" + dice + ".png");
+	$(".dice").attr("src", "assets/img/dice-" + dice + ".png");
 
 	// Update the round score if the number rolled isn't 1
 	if (dice !== 1) {
